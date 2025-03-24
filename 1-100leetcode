@@ -1,1 +1,30 @@
+# from typing import List
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash = {}
+        for i, num in enumerate(nums):
+            # hash[num] = i
+            if target - num in hash:
+                return [hash[target - num], i]
+            hash[num] = i
+        return []
 
+
+# if __name__ == "__main__":
+
+#     # 从用户输入中获取 nums
+#     nums_input = input("请输入整数列表 nums（格式如 [1,2,3] 或 1 2 3）: ").strip()
+
+#     # 处理用户输入的 nums
+#     if nums_input.startswith('[') and nums_input.endswith(']'):
+#         # 如果输入是 [1,2,3] 格式
+#         nums_input = nums_input[1:-1]  # 去除方括号
+#         nums = list(map(int, nums_input.split(',')))  # 按逗号分割并转换为整数列表
+#     else:
+#         # 如果输入是 1 2 3 格式
+#         nums = list(map(int, nums_input.split()))  # 按空格分割并转换为整数列表
+
+#     # 从用户输入中获取 target
+#     target = int(input("请输入目标值 target: "))
+#     solution = Solution()
+#     print(solution.twoSum(nums, target))
